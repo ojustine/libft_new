@@ -3,6 +3,7 @@
 #include "logger.h"
 #include <time.h>
 #include <fcntl.h>
+#include <limits.h>
 
 int main(void)
 {
@@ -13,7 +14,11 @@ int main(void)
 //	logger_add_appender(file);
 //	logger_add_appender("logger.log");
 int fd;
-
+tzset();
+time_t t = time(NULL);
+time_t t1 = time(&t);
+timezone;
+printf("%ld\n", timezone);
 	clock_t start = clock();
 	printf("");
 	fd = open("CMakeFiles", O_CREAT | O_APPEND | O_RDWR, 0600);

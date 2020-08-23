@@ -1,5 +1,5 @@
 #ifndef LOGGER_INTERNAL_H
-#define LOGGER_INTERNAL_H
+# define LOGGER_INTERNAL_H
 
 # include <stdarg.h>
 # include <stdlib.h>
@@ -32,22 +32,25 @@ typedef struct	s_logger
 	t_appender	appenders[LOGGER_MAX_APPENDERS];
 }				t_logger;
 
-static const t_appender	g_stdout_appender = {
-											.level = LOG_LEVEL_INFO,
-											.fd = 1,
-											.name = "STDOUT"
-											};
+static const t_appender	g_stdout_appender =
+{
+	.level = LOG_LEVEL_INFO,
+	.fd = 1,
+	.name = "STDOUT"
+};
 
-static const t_appender	g_stderr_appender = {
-											.level = LOG_LEVEL_WARN,
-											.fd = 2,
-											.name = "STDERR"
-											};
+static const t_appender	g_stderr_appender =
+{
+	.level = LOG_LEVEL_WARN,
+	.fd = 2,
+	.name = "STDERR"
+};
 
-static const t_logger	g_logger = {
-									.level = LOG_LEVEL_INFO,
-									.color = 0,
-									.quiet = 0
-									};
+static const t_logger	g_logger =
+{
+	.level = LOG_LEVEL_INFO,
+	.color = 0,
+	.quiet = 0
+};
 
 #endif
